@@ -123,6 +123,36 @@ class Person(_name: String){
     }
 }
 
+Вычисляемый геттер
+fun main() {
+    val tom = Person("Tom", "Smith")
+    println(tom.fullname)   // Tom Smith
+    tom.lastname = "Simpson"
+    println(tom.fullname)   // Tom Simpson
+}
+class Person(var firstname: String, var lastname: String){
+    val fullname: String
+        get() = "$firstname $lastname"
+}   
+
+Использование полей для хранения значений
+fun main() {
+    val tom = Person("ХЭНКС")
+    println(tom.age)    // 1
+    tom.age = 37
+    println(tom.age)    // 37
+    tom.age = 156
+    println(tom.age)    // 37
+}
+class Person(val name: String){
+    private var _age = 1
+    var age: Int
+        set(value){
+            if((value > 0) and (value < 110))
+                _age = value
+        }
+        get()=  _age
+}
 
 
 
