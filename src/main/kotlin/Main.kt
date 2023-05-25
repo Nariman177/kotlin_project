@@ -212,6 +212,37 @@ fun main() {
     tesla.stop()
 }
 
+val people = listOf("Tom", "Sam", "Kate", "Bob", "Alice")
+val first = people[0]
+val second = people[1]
+println(first)      // Tom
+println(second)     // Sam
+
+val people = listOf("Tom", "Sam", "Kate", "Bob", "Alice")
+val first = people.getOrNull(0)
+val tenth = people.getOrNull(10)
+println(first)      // Tom
+println(tenth)     // null
+
+val people = listOf("Tom", "Sam", "Kate", "Bob", "Alice")
+val first = people.getOrElse(0){"Undefined"}
+val seventh = people.getOrElse(7){"Invalid index $it"}
+val tenth = people.getOrElse(10){"Undefined"}
+     
+println(first)      // Tom
+println(seventh)    // Invalid index 7
+println(tenth)     // Undefined
+
+Метод subList() возвращает часть списка и в качестве параметров принимает начальный и конечный индексы извлекаемых элементов:
+
+val people = listOf("Tom", "Sam", "Kate", "Bob", "Alice", "Mike")
+val subPeople = people.subList(1, 4)
+println(subPeople)      // [Sam, Kate, Bob]
+
+
+
+
+
 
 
 
